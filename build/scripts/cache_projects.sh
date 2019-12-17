@@ -68,9 +68,11 @@ function update_devfile() {
   # As a workaround since jq does not support in-place updates, we need to copy
   # to a temp file and then overwrite the original.
   echo "    Copying $TEMP_FILE -> $devfile"
-  mv $TEMP_FILE "$devfile"
+  mv "$TEMP_FILE" "$devfile"
 
 }
+
+#non-empty change
 
 function get_devfile_name() {
   devfile=$1
