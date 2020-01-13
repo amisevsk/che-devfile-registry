@@ -13,8 +13,7 @@ jobs:
 
       - name: Shellcheck
         run: |
-          find . -type f -name '*.sh' | wc -l
-          find . -type f -name '*.sh' | xargs shellcheck --external-sources
+          find . -type f -name '*.sh' -exec shellcheck --external-sources {} +
   build:
 
     runs-on: ubuntu-latest
