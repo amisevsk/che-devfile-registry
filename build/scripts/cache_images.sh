@@ -30,7 +30,7 @@ echo "Caching images referenced in devfiles"
 while read -r image; do
   # Workaround for getting filenames through content-disposition: copy to temp
   # dir and read filename before moving to /resources.
-  wget -P "${TEMP_DIR}" -nv --content-disposition "${image}"
+  wget -P ${TEMP_DIR} -nv --content-disposition "${image}"
   file=$(find "${TEMP_DIR}" -type f)
   filename=$(basename "${file}")
 
